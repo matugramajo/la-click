@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Playlist from "./ui/playlist";
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,

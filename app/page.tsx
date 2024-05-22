@@ -161,10 +161,10 @@ export default function Home() {
           {/* Container playlists */}
             <div className="flex flex-col w-full mb-40">
               <div className="bg-playlist_bg rounded-3xl mx-10 lg:mx-60 my-5">
-                <iframe style={{ borderRadius: '12px'}} src="https://open.spotify.com/embed/playlist/5Z3befjtrtKt2eJnK6vfcl?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe style={{ borderRadius: '12px'}} src="https://open.spotify.com/embed/playlist/5Z3befjtrtKt2eJnK6vfcl?utm_source=generator" width="100%" height="352" frameBorder="0"  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
               </div>
               <div className="bg-playlist_bg rounded-3xl mx-10 lg:mx-60 my-5">
-                <iframe style={{ borderRadius: '12px'}}  src="https://open.spotify.com/embed/playlist/4Mw7VyJVaEfqtV9os1fJZg?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe style={{ borderRadius: '12px'}}  src="https://open.spotify.com/embed/playlist/4Mw7VyJVaEfqtV9os1fJZg?utm_source=generator" width="100%" height="352" frameBorder="0"  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
               </div>
             </div>
             <div className="w-full absolute bottom-0">

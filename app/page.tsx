@@ -1,113 +1,249 @@
 import Image from "next/image";
-
+import Playlist from "./ui/playlist";
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <main className="flex min-h-screen flex-col">
+      <section>
+        {/* header */}
+        <header className="flex items-center justify-between w-full px-6 py-5 bg-black">
+          <div className="basis-1/3 hidden md:flex">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+              src="/logo.svg"
+              alt="LaClick"
+              width={71}
+              height={75}
+              layout="fixed"
+              />
+          </div>
+          <div className="basis-1/3 flex md:hidden">
+            <Image
+              src="/logo.svg"
+              alt="LaClick"
+              width={41}
+              height={45}
+              layout="fixed"
+              />
+          </div>
+          <div className="basis-2/3 flex justify-end">
+            <nav className=" w-full hidden lg:flex">
+              <ul className="flex w-full justify-between space-x-8 mr-20">
+                <li>
+                  <a className="font-roboto text-nav_gray font-semibold hover:text-slate-50" href="#hero">INICIO</a>
+                </li>
+                <li>
+                  <a className="font-roboto text-nav_gray font-semibold hover:text-slate-50" href="#proxfecha">ENTRADAS</a>
+                </li>
+                <li>
+                  <a className="font-roboto text-nav_gray font-semibold hover:text-slate-50" href="#playlist">NUESTRAS PLAYLIST</a>
+                </li>
+                <li>
+                  <a className="font-roboto text-nav_gray font-semibold hover:text-slate-50" href="#galeria">GALERIA</a>
+                </li>
+              </ul>
+            </nav>
+            <div className="lg:hidden">
+              <Image
+                src="/menu.svg"
+                alt="Menu"
+                width={34}
+                height={34}
+                layout="fixed"
+                />
+              </div>
+          </div>
+        </header>
+      </section>
+      {/* hero */}
+      <section id="hero">
+        <div className="flex flex-col items-center justify-center w-full  bg-cover bg-center relative" style={{ backgroundImage: "url('/backgrounds/hero_banner.png')" }}>
+          <div className="flex flex-col  items-center justify-center mt-28 md:mt-10 mb-36">
+            <div className="text-white text-center">
+              <div className=" h-full relative">
+                <Image 
+                  src="/logo_grande.png"
+                  alt="LaClick"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }} // optional
+                  />
+              </div>
+            </div>
+            <div className="mt-6 md:mt-0">
+              <button  className="bg-azul_boton hover:bg-hover_boton text-white font-bold py-4 px-5 rounded-full">
+                CONSEGUIR MIS ENTRADAS
+              </button>
+            </div>
+          </div>  
+          <div className="w-full absolute bottom-0">
+            <Image
+              src="/foto_rota_arriba_3.png"
+              className="brightness-75"
+              alt="Flecha"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: '100%', height: '45px' }} // optional
+              />
+          </div>
         </div>
-      </div>
+      </section>
+      {/* proxima fecha */}
+      <section id="proxfecha">
+        <div className="flex flex-col items-center justify-center w-full relative min-h-max  bg-cover bg-center" style={{ backgroundImage: "url('/backgrounds/proxfecha_banner.png')" }}>
+          <div className="w-full absolute top-0">
+            <Image
+              src="/foto_rota_arriba_1.png"
+              alt="Flecha"
+              className="brightness-75"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: '100%', height: '45px' }} // optional
+              />
+          </div>
+            
+            <div className="text-white text-center my-32">
+              <div>
+                <h2 className="text-3xl font-bold font-ropasans mb-6">PROXIMA FECHA</h2>
+              </div>
+              <div className=" h-full relative">
+                <Image 
+                  src="/flyer/flyer1.png"
+                  alt="LaClick"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }} // optional
+                  />
+              </div>
+            </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+            <div className="w-full absolute bottom-0">
+            <Image
+              src="/foto_rota_arriba_3.png"
+              className="brightness-75"
+              alt="Flecha"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: '100%', height: '45px' }} // optional
+              />
+          </div>
+  
+        </div>
+      </section>
+      {/* nuestras playlists */}
+      <section id="playlist">
+        <div className="flex flex-col items-center justify-center relative w-full  bg-cover bg-center" style={{ backgroundImage: "url('/backgrounds/playlist_banner.png')" }}>
+          <div className="w-full absolute top-0">
+            <Image
+              src="/foto_rota_arriba_1.png"
+              alt="Flecha"
+              className="brightness-75"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: '100%', height: '45px' }} // optional
+              />
+          </div>
+          <div className="text-white text-center pt-28">
+            <h2 className="text-3xl font-bold font-ropasans">NUESTRAS PLAYLISTS</h2>
+          </div>
+          {/* Container playlists */}
+            <div className="flex flex-col w-full mb-40">
+              <div className="bg-playlist_bg rounded-3xl mx-10 lg:mx-60 my-5">
+                <iframe style={{ borderRadius: '12px'}} src="https://open.spotify.com/embed/playlist/5Z3befjtrtKt2eJnK6vfcl?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
+              <div className="bg-playlist_bg rounded-3xl mx-10 lg:mx-60 my-5">
+                <iframe style={{ borderRadius: '12px'}}  src="https://open.spotify.com/embed/playlist/4Mw7VyJVaEfqtV9os1fJZg?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
+            </div>
+            <div className="w-full absolute bottom-0">
+              <Image
+                src="/foto_rota_arriba_3.png"
+                className="brightness-75"
+                alt="Flecha"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: '45px' }} // optional
+                />
+            </div>
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      {/* galeria */}
+      <section id="galeria">
+        <div className="flex flex-col items-center justify-center w-full relative min-h-max  bg-cover bg-center" style={{ backgroundImage: "url('/backgrounds/galeria_banner.png')" }}>
+          <div className="w-full absolute top-0">
+            <Image
+              src="/foto_rota_arriba_1.png"
+              alt="Flecha"
+              className="brightness-75"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: '100%', height: '45px' }} // optional
+              />
+          </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <div className="text-white text-center my-32 w-full flex flex-col items-center ">
+            <h2 className="text-3xl font-bold font-ropasans">GALERIA DE FOTOS</h2>
+            <Carousel
+                opts={{
+                  align: "start",
+                }}
+                className="w-full  mt-10 px-10"
+              >
+                <CarouselContent>
+                  {Array.from({ length: 3 }).map((_, index) => (
+                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                      <div className="p-1">
+                        <Card className="border-none">
+                          <CardContent className="flex border-none p-0   items-center justify-center ">
+                            <Image 
+                              src={`/galeria/galeria_${index + 1}.png`}
+                              alt="LaClick"
+                              width={0}
+                              height={0}
+                              sizes="100vw"
+                              style={{ width: '100%', height: 'auto', objectFit:'cover' }} // optional
+                              />
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+
+
+          </div>
+
+          <div className="w-full absolute bottom-0">
+            <Image
+              src="/foto_rota_arriba_3.png"
+              className="brightness-75"
+              alt="Flecha"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: '100%', height: '45px' }} // optional
+              />
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

@@ -271,13 +271,13 @@ export default function Home() {
               <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#hero">Inicio </a>
             </div>
             <div className="text-white text-right w-full">
-              <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#hero">Entradas </a>
+              <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#proxfecha">Entradas </a>
             </div>
             <div className="text-white text-right w-full">
-              <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#hero">Nuestras Playlist </a>
+              <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#playlist">Nuestras Playlist </a>
             </div>
             <div className="text-white text-right w-full">
-              <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#hero">Galeria </a>
+              <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#galeria">Galeria </a>
             </div>
           </div>
         </div>
@@ -285,7 +285,7 @@ export default function Home() {
         <div className="w-full border-t border-[#FFFFFF] mt-5"></div>
         <div className="flex items-center justify-between w-full mx-20 mt-5">
           <div className="text-white  w-full">
-            <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#hero">© Fiesta Click - 2024</a>
+            <a className="font-roboto text-nav_gray  hover:text-slate-50">© Fiesta Click - 2024</a>
           </div>
           <div className="text-white  w-full">
                   {/* icons x, instragram, tiktok, spotify */}
@@ -293,35 +293,35 @@ export default function Home() {
               <Image
                 src="/logo_twitter.svg"
                 alt="LaClick"
-                width={24}
-                height={24}
+                width={0}
+                height={0}
                 layout="fixed"
-                className="cursor-pointer"
+                className="cursor-pointer h-[16px] w-[16px] md:h-[24px] md:w-[24px]"
                 />
                 {/* when is mobile change sized of the icon to 16 16 */}
               <Image
                 src="/logo_instagram.svg"
                 alt="LaClick"
-                width={24}
-                height={24}
+                width={0}
+                height={0}
                 layout="fixed"
-                className="cursor-pointer"
+                className="cursor-pointer h-[16px] w-[16px] md:h-[24px] md:w-[24px]"
                 />
               <Image
                 src="/logo_tiktok.svg"
                 alt="LaClick"
-                width={24}
-                height={24}
+                width={0}
+                height={0}
                 layout="fixed"
-                className="cursor-pointer"
+                className="cursor-pointer h-[16px] w-[16px] md:h-[24px] md:w-[24px]"
                 />
               <Image
                 src="/logo_spotify.svg"
                 alt="LaClick"
-                width={24}
-                height={24}
+                width={0}
+                height={0}
                 layout="fixed"
-                className="cursor-pointer"
+                className="cursor-pointer h-[16px] w-[16px] md:h-[24px] md:w-[24px]"
                 />
 
               </div>

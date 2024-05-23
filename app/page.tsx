@@ -366,10 +366,9 @@ export default function Home() {
         <div className="flex items-center justify-between w-full mx-20 mt-5">
           <div className="text-white  w-full">
             <p className="font-roboto text-nav_gray text-sm">Diseñado y desarrollado por&nbsp;
-            <a className="font-roboto text-nav_gray underline  hover:text-slate-50" href="https://linktr.ee/matildegramajo">Matu</a> 
+             <a className="font-roboto text-nav_gray underline  hover:text-slate-50" href="https://linktr.ee/waffi503">Carlos</a>
             &nbsp;y&nbsp;
-             <a className="font-roboto text-nav_gray underline  hover:text-slate-50" href="https://linktr.ee/waffi503"> 
-             Carlos</a>
+            <a className="font-roboto text-nav_gray underline  hover:text-slate-50" href="https://linktr.ee/matildegramajo">Matu</a> 
              
              </p>
           </div>

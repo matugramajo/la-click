@@ -1,4 +1,6 @@
+"use client" 
 import Image from "next/image";
+import * as React from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
@@ -7,9 +9,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 export default function Home() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col scroll-smooth">
       <section>
         {/* header */}
         <header className="flex items-center justify-between w-full px-6 py-5 bg-black">
@@ -33,7 +39,7 @@ export default function Home() {
           </div>
           <div className="basis-2/3 flex justify-end">
             <nav className=" w-full hidden lg:flex">
-              <ul className="flex w-full justify-between space-x-8 mr-20">
+              <ul className="flex w-full justify-between space-x-8 mr-20 scroll-smooth">
                 <li>
                   <a className="font-roboto text-nav_gray font-semibold hover:text-slate-50" href="#hero">INICIO</a>
                 </li>
@@ -41,14 +47,14 @@ export default function Home() {
                   <a className="font-roboto text-nav_gray font-semibold hover:text-slate-50" href="#proxfecha">ENTRADAS</a>
                 </li>
                 <li>
-                  <a className="font-roboto text-nav_gray font-semibold hover:text-slate-50" href="#playlist">NUESTRAS PLAYLIST</a>
+                  <a className="font-roboto text-nav_gray font-semibold hover:text-slate-50 " href="#playlist">NUESTRAS PLAYLIST</a>
                 </li>
                 <li>
                   <a className="font-roboto text-nav_gray font-semibold hover:text-slate-50" href="#galeria">GALERIA</a>
                 </li>
               </ul>
             </nav>
-            <div className="lg:hidden">
+            {/* <div className="lg:hidden">
               <Image
                 src="/menu.svg"
                 alt="Menu"
@@ -56,7 +62,7 @@ export default function Home() {
                 height={34}
                 layout="fixed"
                 />
-              </div>
+              </div> */}
           </div>
         </header>
       </section>
@@ -141,7 +147,7 @@ export default function Home() {
         </div>
       </section>
       {/* nuestras playlists */}
-      <section id="playlist">
+      <section id="playlist" className="scroll-smooth">
         <div className="flex flex-col items-center justify-center relative w-full  bg-cover bg-center" style={{ backgroundImage: "url('/backgrounds/playlist_banner.png')" }}>
           <div className="w-full absolute top-0">
             <Image
@@ -201,22 +207,26 @@ export default function Home() {
                 opts={{
                   align: "start",
                 }}
+                plugins={[plugin.current]}
                 className="w-full  mt-10 px-10"
               >
                 <CarouselContent>
-                  {Array.from({ length: 3 }).map((_, index) => (
-                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                      <div className="p-1">
-                        <Card className="border-none">
-                          <CardContent className="flex border-none p-0   items-center justify-center ">
-                            <Image 
-                              src={`/galeria/galeria_${index + 1}.png`}
-                              alt="LaClick"
-                              width={0}
-                              height={0}
-                              sizes="100vw"
-                              style={{ width: '100%', height: 'auto', objectFit:'cover' }} // optional
-                              />
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <CarouselItem key={index} className=" rounded h-[500px] 2xl:h-[800px] sm:basis-1/2 md:basis-1/3 2xl:basis-1/4">
+                      <div className="p-1 h-full">
+                        <Card className="border-none h-full ">
+                          <CardContent className="flex h-full border-none p-0   items-center justify-center ">
+                              <div className="h-full w-full relative">
+                                <Image 
+                                  src={`/galeria/galeria_${index + 1}.png`}
+                                  alt="LaClick"
+                                  width={0}
+                                  height={0}
+                                  sizes="100vw"
+                                  className="rounded"
+                                  style={{ width: '100%', height: '100%', objectFit:'cover' }} // optional
+                                  />
+                              </div>
                           </CardContent>
                         </Card>
                       </div>
@@ -243,6 +253,83 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* footer */}
+      <footer className="flex items-center justify-center w-full flex-col px-6 py-5 bg-black">
+        <div className="flex items-center justify-between w-full mx-20">
+          <div className="flex items-center justify-center">
+            <Image
+              src="/logo.svg"
+              alt="LaClick"
+              width={71}
+              height={75}
+              layout="fixed"
+              />
+          </div>
+          <div className="flex items-center justify-center flex-col">
+            <div className="text-white text-right w-full">
+              <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#hero">Inicio </a>
+            </div>
+            <div className="text-white text-right w-full">
+              <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#hero">Entradas </a>
+            </div>
+            <div className="text-white text-right w-full">
+              <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#hero">Nuestras Playlist </a>
+            </div>
+            <div className="text-white text-right w-full">
+              <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#hero">Galeria </a>
+            </div>
+          </div>
+        </div>
+        {/* divider */}
+        <div className="w-full border-t border-[#FFFFFF] mt-5"></div>
+        <div className="flex items-center justify-between w-full mx-20 mt-5">
+          <div className="text-white  w-full">
+            <a className="font-roboto text-nav_gray  hover:text-slate-50" href="#hero">© Fiesta Click - 2024</a>
+          </div>
+          <div className="text-white  w-full">
+                  {/* icons x, instragram, tiktok, spotify */}
+            <div className="flex items-center justify-end gap-4 md:gap-9">
+              <Image
+                src="/logo_twitter.svg"
+                alt="LaClick"
+                width={24}
+                height={24}
+                layout="fixed"
+                className="cursor-pointer"
+                />
+                {/* when is mobile change sized of the icon to 16 16 */}
+              <Image
+                src="/logo_instagram.svg"
+                alt="LaClick"
+                width={24}
+                height={24}
+                layout="fixed"
+                className="cursor-pointer"
+                />
+              <Image
+                src="/logo_tiktok.svg"
+                alt="LaClick"
+                width={24}
+                height={24}
+                layout="fixed"
+                className="cursor-pointer"
+                />
+              <Image
+                src="/logo_spotify.svg"
+                alt="LaClick"
+                width={24}
+                height={24}
+                layout="fixed"
+                className="cursor-pointer"
+                />
+
+              </div>
+          </div>
+        </div>
+      </footer>
+
+
     </main>
   );
 }

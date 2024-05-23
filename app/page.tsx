@@ -83,7 +83,12 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-6 md:mt-0">
-              <button  className="bg-azul_boton hover:bg-hover_boton text-white font-bold py-4 px-5 rounded-full">
+              <button  
+              onClick={() => {
+                // open new tab
+                window.open("https://www.allaccess.com.ar/event/fiesta-click", "_blank")
+              } }
+              className="bg-azul_boton hover:bg-hover_boton text-white font-bold py-4 px-5 rounded-full">
                 CONSEGUIR MIS ENTRADAS
               </button>
             </div>
@@ -297,6 +302,11 @@ export default function Home() {
                 width={0}
                 height={0}
                 layout="fixed"
+                onClick={() => {
+                  // open new tab
+                  window.open("https://x.com/laclickfiesta", "_blank")
+                }
+                }
                 className="cursor-pointer h-[16px] w-[16px] md:h-[24px] md:w-[24px]"
                 />
                 {/* when is mobile change sized of the icon to 16 16 */}
@@ -306,6 +316,11 @@ export default function Home() {
                 width={0}
                 height={0}
                 layout="fixed"
+                onClick={() => {
+                  // open new tab
+                  window.open("https://www.instagram.com/clickfiesta/", "_blank")
+
+                } }
                 className="cursor-pointer h-[16px] w-[16px] md:h-[24px] md:w-[24px]"
                 />
               <Image
@@ -314,6 +329,10 @@ export default function Home() {
                 width={0}
                 height={0}
                 layout="fixed"
+                onClick={() => {
+                  // open new tab
+                  window.open("https://www.tiktok.com/@clickfiesta", "_blank")
+                }}
                 className="cursor-pointer h-[16px] w-[16px] md:h-[24px] md:w-[24px]"
                 />
               <Image
@@ -321,11 +340,29 @@ export default function Home() {
                 alt="LaClick"
                 width={0}
                 height={0}
+                onClick={() => {
+                  // open new tab
+                  window.open("https://open.spotify.com/user/31bekp5m6vexptpas7roli6l6nwq", "_blank")
+
+                } }
                 layout="fixed"
                 className="cursor-pointer h-[16px] w-[16px] md:h-[24px] md:w-[24px]"
                 />
 
               </div>
+          </div>
+        </div>
+          {/* divider */}
+        {/* dise;ado y desarrolador por Matu y Carlos */}
+        <div className="flex items-center justify-between w-full mx-20 mt-5">
+          <div className="text-white  w-full">
+            <p className="font-roboto text-nav_gray text-sm">Diseñado y desarrollado por&nbsp;
+            <a className="font-roboto text-nav_gray underline  hover:text-slate-50" href="https://linktr.ee/matildegramajo">Matu</a> 
+            &nbsp;y&nbsp;
+             <a className="font-roboto text-nav_gray underline  hover:text-slate-50" href="https://linktr.ee/waffi503"> 
+             Carlos</a>
+             
+             </p>
           </div>
         </div>
       </footer>

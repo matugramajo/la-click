@@ -208,7 +208,7 @@ export default function Home() {
                   align: "start",
                 }}
                 plugins={[plugin.current]}
-                className="w-full  mt-10 px-10"
+                className="w-full  mt-10 px-5 md:px-10"
               >
                 <CarouselContent>
                   {Array.from({ length: 5 }).map((_, index) => (

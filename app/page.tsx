@@ -261,8 +261,9 @@ export default function Home() {
             <Image
               src="/logo.svg"
               alt="LaClick"
-              width={71}
-              height={75}
+              width={0}
+              height={0}
+              className="cursor-pointer  h-[65] w-[61px] md:h-[75px] md:w-[71px] "
               layout="fixed"
               />
           </div>

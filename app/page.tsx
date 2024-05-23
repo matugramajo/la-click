@@ -15,9 +15,9 @@ export default function Home() {
     Autoplay({ delay: 2000, stopOnInteraction: true })
   )
   return (
-    <main className="flex min-h-screen flex-col scroll-smooth">
+    <main className="flex min-h-screen flex-col scroll-smooth bg-black">
+      {/* header */}
       <section>
-        {/* header */}
         <header className="flex items-center justify-between w-full px-6 py-5 bg-black">
           <div className="basis-1/3 hidden md:flex">
             <Image
@@ -69,7 +69,7 @@ export default function Home() {
       {/* hero */}
       <section id="hero">
         <div className="flex flex-col items-center justify-center w-full  bg-cover bg-center relative" style={{ backgroundImage: "url('/backgrounds/hero_banner.png')" }}>
-          <div className="flex flex-col  items-center justify-center mt-28 md:mt-10 mb-36">
+          <div className="flex flex-col  items-center justify-center mt-28 md:mt-10 mb-36 md:pt-28 md:pb-20">
             <div className="text-white text-center">
               <div className=" h-full relative">
                 <Image 
@@ -88,7 +88,7 @@ export default function Home() {
                 // open new tab
                 window.open("https://www.allaccess.com.ar/event/fiesta-click", "_blank")
               } }
-              className="bg-azul_boton hover:bg-hover_boton text-white font-bold py-4 px-5 rounded-full">
+              className="bg-azul_boton hover:bg-hover_boton text-white md:text-sm 2xl:text-base text-xs font-bold py-4 px-5 rounded-full">
                 CONSEGUIR MIS ENTRADAS
               </button>
             </div>
@@ -123,7 +123,7 @@ export default function Home() {
             
             <div className="text-white text-center my-32">
               <div>
-                <h2 className="text-3xl font-bold font-ropasans mb-6">PROXIMA FECHA</h2>
+                <h2 className="text-3xl font-bold font-ropasans mb-6 text-nav_gray">PROXIMA FECHA</h2>
               </div>
               <div className=" h-full relative">
                 <Image 
@@ -166,11 +166,11 @@ export default function Home() {
               />
           </div>
           <div className="text-white text-center pt-28">
-            <h2 className="text-3xl font-bold font-ropasans">NUESTRAS PLAYLISTS</h2>
+            <h2 className="text-3xl font-bold font-ropasans text-nav_gray mb-6">NUESTRAS PLAYLISTS</h2>
           </div>
           {/* Container playlists */}
             <div className="flex flex-col w-full mb-40">
-              <div className="bg-playlist_bg rounded-3xl mx-10 lg:mx-60 my-5">
+              <div className="bg-playlist_bg rounded-3xl mx-10 lg:mx-60 mb-5">
                 <iframe style={{ borderRadius: '12px'}} src="https://open.spotify.com/embed/playlist/5Z3befjtrtKt2eJnK6vfcl?utm_source=generator" width="100%" height="352" frameBorder="0"  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
               </div>
               <div className="bg-playlist_bg rounded-3xl mx-10 lg:mx-60 my-5">
@@ -190,7 +190,6 @@ export default function Home() {
             </div>
         </div>
       </section>
-
       {/* galeria */}
       <section id="galeria">
         <div className="flex flex-col items-center justify-center w-full relative min-h-max  bg-cover bg-center" style={{ backgroundImage: "url('/backgrounds/galeria_banner.png')" }}>
@@ -206,14 +205,14 @@ export default function Home() {
               />
           </div>
 
-          <div className="text-white text-center my-32 w-full flex flex-col items-center ">
-            <h2 className="text-3xl font-bold font-ropasans">GALERIA DE FOTOS</h2>
+          <div className="text-white text-center my-28 w-full flex flex-col items-center ">
+            <h2 className="text-3xl font-bold font-ropasans text-nav_gray mb-6">GALERIA DE FOTOS</h2>
             <Carousel
                 opts={{
                   align: "start",
                 }}
                 plugins={[plugin.current]}
-                className="w-full  mt-10 px-5 md:px-10"
+                className="w-full px-5 md:px-10"
               >
                 <CarouselContent>
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -267,10 +266,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* footer */}
-      <footer className="flex items-center justify-center w-full flex-col px-6 py-5 bg-black">
-        <div className="flex items-center justify-between w-full mx-20">
+      <footer className="flex items-center justify-center w-full flex-col px-6 py-5 bg-black relative">
+        <div className="w-full absolute top-0">
+              <Image
+                src="/foto_rota_arriba_1.png"
+                alt="Flecha"
+                className="brightness-75"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: '45px' }} // optional
+                />
+        </div>
+        <div className="flex items-center justify-between w-full mx-20 mt-8">
           <div className="flex items-center justify-center">
             <Image
               src="/logo.svg"

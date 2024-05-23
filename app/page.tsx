@@ -245,7 +245,7 @@ export default function Home() {
                 // open new tab
                 window.open("https://linktr.ee/clickfiesta", "_blank")
               } }
-              className="bg-azul_boton hover:bg-hover_boton text-white font-bold py-4 px-5 rounded-full">
+              className="bg-azul_boton hover:bg-hover_boton text-white md:text-sm 2xl:text-base text-xs font-bold py-4 px-5 rounded-full">
                 VER TODAS LAS FOTOS
               </button>
             </div>

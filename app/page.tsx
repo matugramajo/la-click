@@ -240,7 +240,16 @@ export default function Home() {
                 </CarouselContent>
               </Carousel>
 
-
+            <div className="mt-6 ">
+              <button  
+              onClick={() => {
+                // open new tab
+                window.open("https://linktr.ee/clickfiesta", "_blank")
+              } }
+              className="bg-azul_boton hover:bg-hover_boton text-white font-bold py-4 px-5 rounded-full">
+                VER TODAS LAS FOTOS
+              </button>
+            </div>
 
 
           </div>
